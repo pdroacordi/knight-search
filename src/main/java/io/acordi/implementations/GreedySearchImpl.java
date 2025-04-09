@@ -1,10 +1,12 @@
-package implementations;
+package io.acordi.implementations;
 
-import entities.Knight;
-import entities.Position;
-import entities.MoveOption;
+import io.acordi.entities.Knight;
+import io.acordi.entities.MoveOption;
+import io.acordi.entities.Position;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class GreedySearchImpl {
 
@@ -41,7 +43,7 @@ public class GreedySearchImpl {
             exploredNodes++;
 
             if (nextMove == null) {
-                System.out.println("[Greedy] No more moves available after " + path.size() + " positions visited");
+                //System.out.println("[Greedy] No more moves available after " + path.size() + " positions visited");
                 break;
             }
 
@@ -53,8 +55,8 @@ public class GreedySearchImpl {
             currentPosition = nextMove;
         }
 
-        System.out.println("[Greedy] Search explored " + exploredNodes + " moves");
-        System.out.println("[Greedy] Path length: " + path.size() + " out of " + (BOARD_SIZE * BOARD_SIZE) + " squares");
+        //System.out.println("[Greedy] Search explored " + exploredNodes + " moves");
+        //System.out.println("[Greedy] Path length: " + path.size() + " out of " + (BOARD_SIZE * BOARD_SIZE) + " squares");
 
         return path;
     }
@@ -82,7 +84,7 @@ public class GreedySearchImpl {
 
         Collections.sort(moveOptions);
 
-        return moveOptions.getFirst().position;
+        return moveOptions.get(0).position;
     }
 
     private static int countAccessibleMoves(int x, int y, long visitedMask, Knight knight) {

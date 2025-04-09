@@ -1,4 +1,4 @@
-package entities;
+package io.acordi.entities;
 
 import java.util.List;
 

@@ -1,8 +1,10 @@
-package implementations;
+package io.acordi.implementations;
 
-import entities.Knight;
-import entities.Position;
-import entities.State;
+
+
+import io.acordi.entities.Knight;
+import io.acordi.entities.Position;
+import io.acordi.entities.State;
 
 import java.util.*;
 
@@ -50,8 +52,8 @@ public class BreadthFirstSearchImpl {
             exploredNodes++;
 
             if (current.visitedMask == FULL_MASK) {
-                System.out.println("[BFS] Solution found after exploring: " + exploredNodes);
-                System.out.println("[BFS] Maximum queue size: " + maxQueueSize);
+                //System.out.println("[BFS] Solution found after exploring: " + exploredNodes);
+                //System.out.println("[BFS] Maximum queue size: " + maxQueueSize);
                 return current.path;
             }
 
@@ -82,7 +84,7 @@ public class BreadthFirstSearchImpl {
             }
         }
 
-        System.out.println("[BFS] No solution found after exploring " + exploredNodes + " states");
+        //System.out.println("[BFS] No solution found after exploring " + exploredNodes + " states");
         return null;
 
     }

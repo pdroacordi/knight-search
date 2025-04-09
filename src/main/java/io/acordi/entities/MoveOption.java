@@ -1,4 +1,4 @@
-package entities;
+package io.acordi.entities;
 
 public class MoveOption implements Comparable<MoveOption> {
     public Position position;
