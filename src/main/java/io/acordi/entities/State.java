@@ -8,12 +8,12 @@ public class State {
 
     public long visitedMask;
 
-    public List<Position> path;
+    public State parent;
 
-    public State(Position position, long visitedMask, List<Position> path) {
+    public State(Position position, long visitedMask, State parent) {
         this.position = position;
         this.visitedMask = visitedMask;
-        this.path = path;
+        this.parent = parent;
     }
 
 

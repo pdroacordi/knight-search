@@ -35,10 +35,9 @@ public class BreadthFirstSearchImpl {
         int startPositionBit = originX * BOARD_SIZE + originY;
         long initialMask = 1L << startPositionBit;
 
-        List<Position> initialPath = new ArrayList<>();
-        initialPath.add(new Position(originX, originY));
 
-        var initialState = new State(new Position(originX, originY), initialMask, initialPath);
+        var initialState = new State(new Position(originX, originY), initialMask, null);
+
         queue.add(initialState);
         visitedStates.add(getStateHash(initialState));
 
@@ -54,7 +53,7 @@ public class BreadthFirstSearchImpl {
             if (current.visitedMask == FULL_MASK) {
                 //System.out.println("[BFS] Solution found after exploring: " + exploredNodes);
                 //System.out.println("[BFS] Maximum queue size: " + maxQueueSize);
-                return current.path;
+                return reconstructPath(current);
             }
 
             for (int[] move : knight.getMoves()) {
@@ -71,10 +70,7 @@ public class BreadthFirstSearchImpl {
                 long newMask = current.visitedMask | bitMask;
                 Position newPosition = new Position(newX, newY);
 
-                List<Position> newPath = new ArrayList<>(current.path);
-                newPath.add(newPosition);
-
-                State newState = new State(newPosition, newMask, newPath);
+                State newState = new State(newPosition, newMask, current);
                 long stateHash = getStateHash(newState);
 
                 if (visitedStates.contains(stateHash)) continue;
@@ -93,6 +89,18 @@ public class BreadthFirstSearchImpl {
         return ((long)state.position.getX() << 59) |
                 ((long)state.position.getY() << 56) |
                 (state.visitedMask & ((1L << 56) - 1));
+    }
+
+    private static List<Position> reconstructPath(State state) {
+        List<Position> path = new ArrayList<>();
+
+        while (state != null) {
+            path.add(state.position);
+            state = state.parent;
+        }
+
+        Collections.reverse(path);
+        return path;
     }
 
     private static boolean isValidPosition(int x, int y){
