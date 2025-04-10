@@ -1,20 +1,15 @@
 package io.acordi.entities;
 
-import java.util.List;
-
 public class State {
 
-    public Position position;
-
+    public int pos;
     public long visitedMask;
-
     public State parent;
 
-    public State(Position position, long visitedMask, State parent) {
-        this.position = position;
+    public State(int pos, long visitedMask, State parent) {
+        this.pos = pos;
         this.visitedMask = visitedMask;
         this.parent = parent;
     }
-
 
 }

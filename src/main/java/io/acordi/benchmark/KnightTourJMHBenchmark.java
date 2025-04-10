@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 public class KnightTourJMHBenchmark {
 
-    @Param({"5"})
+    @Param({"6"})
     public int boardSize;
 
     @Param({"0"})
@@ -28,13 +28,11 @@ public class KnightTourJMHBenchmark {
 
     @Benchmark
     public void benchmarkBFS() {
-        BreadthFirstSearchImpl.resetExploredNodes();
         BreadthFirstSearchImpl.breadthFirstSearch(startX, startY);
     }
 
     @Benchmark
     public void benchmarkGreedy() {
-        GreedySearchImpl.resetExploredNodes();
         GreedySearchImpl.greedySearch(startX, startY);
     }
 

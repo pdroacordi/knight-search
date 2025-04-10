@@ -12,19 +12,10 @@ public class GreedySearchImpl {
 
     private static int BOARD_SIZE = 4;
     private static long FULL_MASK;
-    private static int exploredNodes = 0;
 
     public static void setBoardSize(int size) {
         BOARD_SIZE = size;
         FULL_MASK = (1L << (BOARD_SIZE * BOARD_SIZE)) - 1;
-    }
-
-    public static void resetExploredNodes() {
-        exploredNodes = 0;
-    }
-
-    public static int getExploredNodes() {
-        return exploredNodes;
     }
 
     public static List<Position> greedySearch(int originX, int originY) {
@@ -40,10 +31,8 @@ public class GreedySearchImpl {
 
         while (visitedMask != FULL_MASK) {
             Position nextMove = findNextMoveWarnsdorff(currentPosition, visitedMask, knight);
-            exploredNodes++;
 
             if (nextMove == null) {
-                //System.out.println("[Greedy] No more moves available after " + path.size() + " positions visited");
                 break;
             }
 
@@ -54,9 +43,6 @@ public class GreedySearchImpl {
 
             currentPosition = nextMove;
         }
-
-        //System.out.println("[Greedy] Search explored " + exploredNodes + " moves");
-        //System.out.println("[Greedy] Path length: " + path.size() + " out of " + (BOARD_SIZE * BOARD_SIZE) + " squares");
 
         return path;
     }
