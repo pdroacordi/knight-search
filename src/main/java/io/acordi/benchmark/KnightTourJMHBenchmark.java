@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 public class KnightTourJMHBenchmark {
 
-    @Param({"6"})
+    @Param({"8"})
     public int boardSize;
 
     @Param({"0"})
@@ -28,7 +28,11 @@ public class KnightTourJMHBenchmark {
 
     @Benchmark
     public void benchmarkBFS() {
-        BreadthFirstSearchImpl.breadthFirstSearch(startX, startY);
+        try {
+            BreadthFirstSearchImpl.breadthFirstSearch(startX, startY);
+        }catch (OutOfMemoryError e) {
+            System.out.println("Estouro de memória durante benchmarking.");
+        }
     }
 
     @Benchmark

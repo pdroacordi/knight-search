@@ -1,0 +1,21 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: boardSize","Param: startX","Param: startY"
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS","avgt",1,10,450559.731673,31364.964321,"ms/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.alloc.rate","avgt",1,10,22.407020,1.572113,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.alloc.rate.norm","avgt",1,10,10577558332.000000,1871320.559028,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Eden_Space","avgt",1,10,21.917146,1.555006,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Eden_Space.norm","avgt",1,10,10346089676.800000,15256970.787110,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Old_Gen","avgt",1,10,18.041272,1.603253,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Old_Gen.norm","avgt",1,10,8512964668.800000,226073814.107180,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Survivor_Space","avgt",1,10,0.948979,0.117078,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Survivor_Space.norm","avgt",1,10,447750328.000000,41079443.506814,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.count","avgt",1,10,1716.000000,NaN,"counts",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.time","avgt",1,10,1167292.000000,NaN,"ms",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy","avgt",1,10,0.001520,0.000066,"ms/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.alloc.rate","avgt",1,10,4017.681435,168.301016,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.alloc.rate.norm","avgt",1,10,6720.321603,0.009467,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Eden_Space","avgt",1,10,4020.399884,160.120621,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Eden_Space.norm","avgt",1,10,6725.188899,54.737854,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Survivor_Space","avgt",1,10,0.011653,0.003282,"MB/sec",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Survivor_Space.norm","avgt",1,10,0.019534,0.005951,"B/op",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.count","avgt",1,10,910.000000,NaN,"counts",6,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.time","avgt",1,10,822.000000,NaN,"ms",6,0,0

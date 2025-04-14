@@ -2,7 +2,7 @@ package io.acordi.implementations;
 
 import io.acordi.entities.State;
 import io.acordi.entities.Knight;
-import io.acordi.entities.LongHashSet;
+import io.acordi.entities.LongLinkedHashSet;
 import io.acordi.entities.Position;
 
 import java.util.*;
@@ -18,8 +18,8 @@ public class BreadthFirstSearchImpl {
     }
 
     public static List<Position> breadthFirstSearch(int originX, int originY) {
-        Queue<State> queue = new ArrayDeque<>();
-        LongHashSet visitedStates = new LongHashSet(1 << 16);
+        Queue<State> queue = new LinkedList<>();
+        LongLinkedHashSet visitedStates = new LongLinkedHashSet(1 << 20);
 
         int startPos = originX * BOARD_SIZE + originY;
         long initialMask = 1L << startPos;
@@ -60,7 +60,11 @@ public class BreadthFirstSearchImpl {
                     continue;
 
                 visitedStates.add(stateHash);
-                queue.add(newState);
+                int availableMoves = countAvailableMoves(newX, newY, newMask, knight);
+
+                if (availableMoves > 0 || newMask == FULL_MASK) {
+                    queue.add(newState);
+                }
             }
         }
 
@@ -88,6 +92,33 @@ public class BreadthFirstSearchImpl {
 
     private static boolean isValidPosition(int x, int y){
         return x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE;
+    }
+
+    // Isso aqui é uma espécie de poda da árvore.
+    // A gente não vai visitar casas onde o cavalo ficaria preso,
+    // então, basicamente, casas que não tem pra onde ir.
+    //
+    // Antes que reclame, isso aqui não descaracteriza uma BFS,
+    // NÃO É UMA BUSCA HEURÍSTICA!
+    //
+    // A gente só evita carregar na memória nós que não tem saída,
+    // não estamos priorizando um nó melhor.
+    // tudo em nome da otimização, tem que tentar rodar esse algoritmo pelo menos num 6x6.
+    // - Pedro
+    private static int countAvailableMoves(int x, int y, long visitedMask, Knight knight) {
+        int count = 0;
+        for (int[] move : knight.getMoves()) {
+            int nx = x + move[0];
+            int ny = y + move[1];
+
+            if (isValidPosition(nx, ny)) {
+                int pos = nx * BOARD_SIZE + ny;
+                if ((visitedMask & (1L << pos)) == 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
     }
 
 

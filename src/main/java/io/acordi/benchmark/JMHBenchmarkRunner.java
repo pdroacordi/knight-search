@@ -12,7 +12,7 @@ public class JMHBenchmarkRunner {
                 .include(KnightTourJMHBenchmark.class.getSimpleName())
                 .addProfiler("gc")
                 .forks(1)
-                .warmupIterations(2 )     //Iterações de aquecimento pra estabilizar a JVM, a primeira costuma ser mais lenta
+                .warmupIterations(1 )     //Iterações de aquecimento pra estabilizar a JVM, a primeira costuma ser mais lenta
                 .measurementIterations(10) // Medição do problema em si
                 .result("knight_tour_benchmark_results.csv")
                 .resultFormat(ResultFormatType.CSV)
