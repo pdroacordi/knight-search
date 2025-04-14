@@ -1,0 +1,21 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: boardSize","Param: startX","Param: startY"
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS","avgt",1,10,60.423265,2.814862,"ms/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.alloc.rate","avgt",1,10,714.577723,33.743454,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.alloc.rate.norm","avgt",1,10,47490710.645412,920.463740,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Eden_Space","avgt",1,10,648.769008,57.897368,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Eden_Space.norm","avgt",1,10,43101319.617651,2701097.180158,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Old_Gen","avgt",1,10,1.622420,1.876221,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Old_Gen.norm","avgt",1,10,107036.173824,123167.170506,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Survivor_Space","avgt",1,10,31.515714,13.930914,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.churn.G1_Survivor_Space.norm","avgt",1,10,2104028.873890,968742.000743,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.count","avgt",1,10,186.000000,NaN,"counts",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkBFS:·gc.time","avgt",1,10,14914.000000,NaN,"ms",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy","avgt",1,10,0.000969,0.000014,"ms/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.alloc.rate","avgt",1,10,4079.846552,57.383067,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.alloc.rate.norm","avgt",1,10,4352.227389,0.005261,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Eden_Space","avgt",1,10,4082.013417,67.224364,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Eden_Space.norm","avgt",1,10,4354.508330,26.880680,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Survivor_Space","avgt",1,10,0.012497,0.002591,"MB/sec",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.churn.G1_Survivor_Space.norm","avgt",1,10,0.013332,0.002784,"B/op",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.count","avgt",1,10,1011.000000,NaN,"counts",5,0,0
+"io.acordi.benchmark.KnightTourJMHBenchmark.benchmarkGreedy:·gc.time","avgt",1,10,868.000000,NaN,"ms",5,0,0
