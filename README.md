@@ -8,7 +8,7 @@ Este projeto implementa e compara diferentes algoritmos de busca para resoluçã
 
 O Passeio do Cavalo consiste em encontrar uma sequência de movimentos de um cavalo de xadrez que percorra todas as casas de um tabuleiro sem repetir nenhuma delas. O problema pode ser modelado como um caminho Hamiltoniano em um grafo.
 
-Mais detalhes teóricos e análises completas podem ser encontrados no artigo associado a este projeto.
+Mais detalhes teóricos e análises completas podem ser encontrados no artigo associado a este projeto, clicando [aqui](./Análise_Comparativa_de_Desempenho_entre_Busca_em_Largura_e_Busca_Gulosa_com_Heurística_de_Warnsdorff_na_Resolução_do_Problema_do_Passeio_do_Cavalo.pdf).
 
 ---
 
